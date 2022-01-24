@@ -1,0 +1,7 @@
+create table max_min_avg as
+select  listing_id,
+max(price) as maximum,
+min(price) as minimum,
+avg(trim(price,'$')) as average
+from calendar
+group by listing_id;

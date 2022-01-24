@@ -1,0 +1,6 @@
+select count(*)  as more_than_50 from(
+select listing_id,
+sum(case when available='t' then 1 else 0 end)*100/365 as fraction_days
+from calendar
+group by listing_id
+having fraction_days>50);

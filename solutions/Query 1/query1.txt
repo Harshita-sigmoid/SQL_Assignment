@@ -1,0 +1,2 @@
+select max(date)-min(date) as year, (max(date)-min(date))*365 as days
+from calendar;

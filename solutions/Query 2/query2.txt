@@ -1,0 +1,5 @@
+SELECT count(*) as duplicates
+FROM (SELECT listing_id,date,available,price,count(*)as total
+FROM calendar
+GROUP BY listing_id,date,available,price
+HAVING total>1) ;

@@ -1,0 +1,6 @@
+CREATE TABLE average as
+SELECT listing_id, avg(trim(price,'$')) as average
+FROM calendar
+GROUP BY listing_id
+HAVING average>500;
+
